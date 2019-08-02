@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+#  Copy all files to / then run this
+#
+				
+cp /media/sf_Downloads/automation_code.tar.gz .
+ 
+tar -xvf automation_code.tar.gz -C $HOME saved_jobs
+tar -xvf automation_code.tar.gz scripts/Toolbox
+
+cp /scripts/Toolbox/aaa_config.txt.example $HOME/aaa_config.txt
+
+chown "$1":"$1" /scripts/ -R
+chown "$1":"$1" $HOME -R
+
+alias canned='$HOME/saved_jobs/shrink_wrapped/run_canned.sh'
+alias go='/scripts/Toolbox/goto.sh'
+alias go_cmd='/scripts/Toolbox/auto_command_run'
+alias runthings='/scripts/Toolbox/auto_command_run -m'
+
